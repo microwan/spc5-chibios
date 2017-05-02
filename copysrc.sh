@@ -26,11 +26,15 @@ cp -f -R ${chibios}/os/hal/src ./portable/ChibiOS-RT_Portable_HAL_Component/comp
 
 # Portable Kernel Test Suite.
 echo "Portable Test Suite"
+mkdir -p  ./portable/ChibiOS-RT_Portable_Kernel_Test_Suite_Component/component/lib/include
 cp -f ${chibios}/test/*.h ./portable/ChibiOS-RT_Portable_Kernel_Test_Suite_Component/component/lib/include/
+mkdir -p ./portable/ChibiOS-RT_Portable_Kernel_Test_Suite_Component/component/lib/src
 cp -f ${chibios}/test/*.c ./portable/ChibiOS-RT_Portable_Kernel_Test_Suite_Component/component/lib/src/
 
 # Portable Output Formatter.
 echo "Portable Output Formatter"
+mkdir -p ./portable/ChibiOS-RT_Portable_Output_Formatter_Component/component/lib/include
+mkdir -p ./portable/ChibiOS-RT_Portable_Output_Formatter_Component/component/lib/src
 cp -f ${chibios}/os/various/chprintf.h ./portable/ChibiOS-RT_Portable_Output_Formatter_Component/component/lib/include/
 cp -f ${chibios}/os/various/chprintf.c ./portable/ChibiOS-RT_Portable_Output_Formatter_Component/component/lib/src/
 cp -f ${chibios}/os/various/memstreams.h ./portable/ChibiOS-RT_Portable_Output_Formatter_Component/component/lib/include/
@@ -38,6 +42,8 @@ cp -f ${chibios}/os/various/memstreams.c ./portable/ChibiOS-RT_Portable_Output_F
 
 # Portable Shell.
 echo "Portable Shell"
+mkdir -p ./portable/ChibiOS-RT_Portable_Mini_Shell_Component/component/lib/include
+mkdir -p ./portable/ChibiOS-RT_Portable_Mini_Shell_Component/component/lib/src
 cp -f ${chibios}/os/various/shell.h ./portable/ChibiOS-RT_Portable_Mini_Shell_Component/component/lib/include/
 cp -f ${chibios}/os/various/shell.c ./portable/ChibiOS-RT_Portable_Mini_Shell_Component/component/lib/src/
 
@@ -47,6 +53,8 @@ cp -f ${chibios}/os/various/shell.c ./portable/ChibiOS-RT_Portable_Mini_Shell_Co
 
 # SPC560BCxx Kernel Port.
 echo "SPC560BCxx Kernel Port"
+mkdir -p ./SPC560BCxx/ChibiOS-RT_SPC560BCxx_Kernel_Port_Component/component/lib/include
+mkdir -p ./SPC560BCxx/ChibiOS-RT_SPC560BCxx_Kernel_Port_Component/component/lib/src
 cp -f ${chibios}/os/ports/GCC/PPC/*.h                      ./SPC560BCxx/ChibiOS-RT_SPC560BCxx_Kernel_Port_Component/component/lib/include/
 cp -f ${chibios}/os/ports/GCC/PPC/SPC560BCxx/*.h           ./SPC560BCxx/ChibiOS-RT_SPC560BCxx_Kernel_Port_Component/component/lib/include/
 cp -f ${chibios}/os/ports/GCC/PPC/*.c                      ./SPC560BCxx/ChibiOS-RT_SPC560BCxx_Kernel_Port_Component/component/lib/src/
@@ -59,6 +67,8 @@ cp -f ${chibios}/os/ports/GCC/PPC/SPC560BCxx/vectors.s     ./SPC560BCxx/ChibiOS-
 
 # SPC560Bxx Kernel Port.
 echo "SPC560Bxx Kernel Port"
+mkdir -p ./SPC560Bxx/ChibiOS-RT_SPC560Bxx_Kernel_Port_Component/component/lib/include
+mkdir -p ./SPC560Bxx/ChibiOS-RT_SPC560Bxx_Kernel_Port_Component/component/lib/src
 cp -f ${chibios}/os/ports/GCC/PPC/*.h                      ./SPC560Bxx/ChibiOS-RT_SPC560Bxx_Kernel_Port_Component/component/lib/include/
 cp -f ${chibios}/os/ports/GCC/PPC/SPC560Bxx/*.h            ./SPC560Bxx/ChibiOS-RT_SPC560Bxx_Kernel_Port_Component/component/lib/include/
 cp -f ${chibios}/os/ports/GCC/PPC/*.c                      ./SPC560Bxx/ChibiOS-RT_SPC560Bxx_Kernel_Port_Component/component/lib/src/
@@ -71,6 +81,8 @@ cp -f ${chibios}/os/ports/GCC/PPC/SPC560Bxx/vectors.s      ./SPC560Bxx/ChibiOS-R
 
 # SPC560Dxx Kernel Port.
 echo "SPC560Dxx Kernel Port"
+mkdir -p ./SPC560Dxx/ChibiOS-RT_SPC560Dxx_Kernel_Port_Component/component/lib/include
+mkdir -p ./SPC560Dxx/ChibiOS-RT_SPC560Dxx_Kernel_Port_Component/component/lib/src
 cp -f ${chibios}/os/ports/GCC/PPC/*.h                      ./SPC560Dxx/ChibiOS-RT_SPC560Dxx_Kernel_Port_Component/component/lib/include/
 cp -f ${chibios}/os/ports/GCC/PPC/SPC560Dxx/*.h            ./SPC560Dxx/ChibiOS-RT_SPC560Dxx_Kernel_Port_Component/component/lib/include/
 cp -f ${chibios}/os/ports/GCC/PPC/*.c                      ./SPC560Dxx/ChibiOS-RT_SPC560Dxx_Kernel_Port_Component/component/lib/src/
@@ -83,6 +95,8 @@ cp -f ${chibios}/os/ports/GCC/PPC/SPC560Dxx/vectors.s      ./SPC560Dxx/ChibiOS-R
 
 # SPC560Pxx Kernel Port.
 echo "SPC560Pxx Kernel Port"
+mkdir -p ./SPC560Pxx/ChibiOS-RT_SPC560Pxx_Kernel_Port_Component/component/lib/include
+mkdir -p ./SPC560Pxx/ChibiOS-RT_SPC560Pxx_Kernel_Port_Component/component/lib/src
 cp -f ${chibios}/os/ports/GCC/PPC/*.h                      ./SPC560Pxx/ChibiOS-RT_SPC560Pxx_Kernel_Port_Component/component/lib/include/
 cp -f ${chibios}/os/ports/GCC/PPC/SPC560Pxx/*.h            ./SPC560Pxx/ChibiOS-RT_SPC560Pxx_Kernel_Port_Component/component/lib/include/
 cp -f ${chibios}/os/ports/GCC/PPC/*.c                      ./SPC560Pxx/ChibiOS-RT_SPC560Pxx_Kernel_Port_Component/component/lib/src/
@@ -95,6 +109,8 @@ cp -f ${chibios}/os/ports/GCC/PPC/SPC560Pxx/vectors.s      ./SPC560Pxx/ChibiOS-R
 
 # SPC563Mxx Kernel Port.
 echo "SPC563Mxx Kernel Port"
+mkdir -p ./SPC563Mxx/ChibiOS-RT_SPC563Mxx_Kernel_Port_Component/component/lib/include
+mkdir -p ./SPC563Mxx/ChibiOS-RT_SPC563Mxx_Kernel_Port_Component/component/lib/src
 cp -f ${chibios}/os/ports/GCC/PPC/*.h                      ./SPC563Mxx/ChibiOS-RT_SPC563Mxx_Kernel_Port_Component/component/lib/include/
 cp -f ${chibios}/os/ports/GCC/PPC/SPC563Mxx/*.h            ./SPC563Mxx/ChibiOS-RT_SPC563Mxx_Kernel_Port_Component/component/lib/include/
 cp -f ${chibios}/os/ports/GCC/PPC/*.c                      ./SPC563Mxx/ChibiOS-RT_SPC563Mxx_Kernel_Port_Component/component/lib/src/
@@ -107,6 +123,8 @@ cp -f ${chibios}/os/ports/GCC/PPC/SPC563Mxx/vectors.s      ./SPC563Mxx/ChibiOS-R
 
 # SPC564Axx Kernel Port.
 echo "SPC564Axx Kernel Port"
+mkdir -p ./SPC564Axx/ChibiOS-RT_SPC564Axx_Kernel_Port_Component/component/lib/include
+mkdir -p ./SPC564Axx/ChibiOS-RT_SPC564Axx_Kernel_Port_Component/component/lib/src
 cp -f ${chibios}/os/ports/GCC/PPC/*.h                      ./SPC564Axx/ChibiOS-RT_SPC564Axx_Kernel_Port_Component/component/lib/include/
 cp -f ${chibios}/os/ports/GCC/PPC/SPC564Axx/*.h            ./SPC564Axx/ChibiOS-RT_SPC564Axx_Kernel_Port_Component/component/lib/include/
 cp -f ${chibios}/os/ports/GCC/PPC/*.c                      ./SPC564Axx/ChibiOS-RT_SPC564Axx_Kernel_Port_Component/component/lib/src/
@@ -119,6 +137,8 @@ cp -f ${chibios}/os/ports/GCC/PPC/SPC564Axx/vectors.s      ./SPC564Axx/ChibiOS-R
 
 # SPC56ECxx Kernel Port.
 echo "SPC56ECxx Kernel Port"
+mkdir -p ./SPC56ECxx/ChibiOS-RT_SPC56ECxx_Kernel_Port_Component/component/lib/include
+mkdir -p ./SPC56ECxx/ChibiOS-RT_SPC56ECxx_Kernel_Port_Component/component/lib/src
 cp -f ${chibios}/os/ports/GCC/PPC/*.h                      ./SPC56ECxx/ChibiOS-RT_SPC56ECxx_Kernel_Port_Component/component/lib/include/
 cp -f ${chibios}/os/ports/GCC/PPC/SPC56ECxx/*.h            ./SPC56ECxx/ChibiOS-RT_SPC56ECxx_Kernel_Port_Component/component/lib/include/
 cp -f ${chibios}/os/ports/GCC/PPC/*.c                      ./SPC56ECxx/ChibiOS-RT_SPC56ECxx_Kernel_Port_Component/component/lib/src/
@@ -131,6 +151,8 @@ cp -f ${chibios}/os/ports/GCC/PPC/SPC56ECxx/vectors.s      ./SPC56ECxx/ChibiOS-R
 
 # SPC56ELxx Kernel Port.
 echo "SPC56ELxx Kernel Port"
+mkdir -p ./SPC56ELxx/ChibiOS-RT_SPC56ELxx_Kernel_Port_Component/component/lib/include
+mkdir -p ./SPC56ELxx/ChibiOS-RT_SPC56ELxx_Kernel_Port_Component/component/lib/src
 cp -f ${chibios}/os/ports/GCC/PPC/*.h                      ./SPC56ELxx/ChibiOS-RT_SPC56ELxx_Kernel_Port_Component/component/lib/include/
 cp -f ${chibios}/os/ports/GCC/PPC/SPC56ELxx/*.h            ./SPC56ELxx/ChibiOS-RT_SPC56ELxx_Kernel_Port_Component/component/lib/include/
 cp -f ${chibios}/os/ports/GCC/PPC/*.c                      ./SPC56ELxx/ChibiOS-RT_SPC56ELxx_Kernel_Port_Component/component/lib/src/
@@ -143,6 +165,7 @@ cp -f ${chibios}/os/ports/GCC/PPC/SPC56ELxx/vectors.s      ./SPC56ELxx/ChibiOS-R
 
 # STM32F4xx Platform.
 echo "STM32F4xx Platform"
+
 cp -f ${chibios}/os/ports/GCC/ARMCMx/rules.mk              ./STM32F4xx/ChibiOS-RT_STM32F4xx_Platform_Component/component/lib/rsc/
 cp -f ${chibios}/os/ports/GCC/ARMCMx/crt0.c                ./STM32F4xx/ChibiOS-RT_STM32F4xx_Platform_Component/component/lib/src/
 
@@ -160,6 +183,8 @@ cp -f ${chibios}/os/ports/GCC/ARMCMx/STM32F4xx/*.c         ./STM32F4xx/ChibiOS-R
 
 # STM32F4xx HAL Platform.
 echo "STM32F4xx HAL Platform"
+mkdir -p ./STM32F4xx/ChibiOS-RT_STM32F4xx_HAL_Platform_Component/component/lib/include
+mkdir -p ./STM32F4xx/ChibiOS-RT_STM32F4xx_HAL_Platform_Component/component/lib/src
 cp -f ${chibios}/os/hal/platforms/STM32/*.h                ./STM32F4xx/ChibiOS-RT_STM32F4xx_HAL_Platform_Component/component/lib/include/
 cp -f ${chibios}/os/hal/platforms/STM32/*.c                ./STM32F4xx/ChibiOS-RT_STM32F4xx_HAL_Platform_Component/component/lib/src/
 cp -f ${chibios}/os/hal/platforms/STM32/GPIOv2/*.h         ./STM32F4xx/ChibiOS-RT_STM32F4xx_HAL_Platform_Component/component/lib/include/
