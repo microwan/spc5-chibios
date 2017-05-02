@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<!-- All SPC5 Component extension shall have the namespace "com.st.tools.spc5"-->
+   <extension
+         id="org.chibios.spc5.components.kernel.testsuite"
+         name="ChibiOS/RT Portable Kernel Test Suite Component"
+         point="com.st.tools.spc5.extension.v1">
+      <component
+            headerName="test.h"
+            hidden="false"
+            icon="rsc/chibios.ico"
+            isPlatform="false">
+            <description>
+                ChibiOS/RT portable kernel test suite.
+            </description>
+            <categories>
+               <category
+                     id="ChibiOS-RT/Portable Components">
+               </category>
+            </categories>
+            <configuration>
+               <description>
+                  This component does not require any configuration.
+               </description>
+               <image
+                     align="left"
+                     file="rsc/chibios48x48.png">
+                  <text>
+                     ChibiOS/RT is GPL3-licensed free software. A special exception has been added to the GPL3 in order to allow inclusion in closed source applications, details are in the exception.txt document.
+                  </text>
+               </image>
+            </configuration>
+            <requiredFeatures>
+               <requiredFeature
+                     id="org.chibios.spc5.features.kernel">
+               </requiredFeature>
+            </requiredFeatures>
+      </component>
+   </extension>
+
+</plugin>

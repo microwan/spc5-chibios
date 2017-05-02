@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="org.chibios.spc5.components.external.cmsis"
+         name="CMSIS Component"
+         point="com.st.tools.spc5.extension.v1">
+      <component
+            hidden="true"
+            icon="rsc/arm.ico"
+            isPlatform="false">
+            <description>
+                CMSIS files.
+            </description>
+            <categories>
+               <category
+                     id="ChibiOS-RT/External">
+               </category>
+            </categories>
+            <configuration>
+               <description>
+                  CMSIS options and settings.
+               </description>
+               <image
+                     align="left"
+                     file="rsc/arm.ico">
+                  <text>
+                     Copyright (C) 2009-2012 ARM Limited. All rights reserved. ARM Limited (ARM) is supplying this software for use with Cortex-M processor based microcontrollers. This file can be freely distributed within development tools that are supporting such ARM based processors.
+                  </text>
+               </image>
+            </configuration>
+            <exportedFeatures>
+               <exportedFeature
+                     brief="CMSIS definitions interface."
+                     exclusive="false"
+                     id="com.arm.spc5.features.cmsis">
+               </exportedFeature>
+            </exportedFeatures>
+            <requiredFeatures>
+               <requiredFeature
+                     id="com.st.tools.spc5.features.platform.arm.cortex.mx">
+               </requiredFeature>
+            </requiredFeatures>
+      </component>
+   </extension>
+
+</plugin>

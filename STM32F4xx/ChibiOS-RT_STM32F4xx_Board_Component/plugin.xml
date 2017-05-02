@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="org.chibios.spc5.components.board.stm32f4xx"
+         name="ChibiOS-RT STM32F4xx Board Component"
+         point="com.st.tools.spc5.extension.v1">
+      <component
+            hidden="true"
+            icon="rsc/chibios.ico"
+            isPlatform="false">
+            <description>
+                ChibiOS/RT STM32F4xx board description files.
+            </description>
+            <categories>
+               <category
+                     id="ChibiOS-RT/Platforms/STM32F4xx">
+               </category>
+            </categories>
+            <configuration>
+               <description>
+                  Board options and settings.
+               </description>
+               <image
+                     align="left"
+                     file="rsc/chibios48x48.png">
+                  <text>
+                     ChibiOS/RT is GPL3-licensed free software. A special exception has been added to the GPL3 in order to allow inclusion in closed source applications, details are in the exception.txt document.
+                  </text>
+               </image>
+               <group
+                     name="Identification">
+                  <description>
+                     Board info related settings.
+                  </description>
+                  <property
+                        brief="An identifier for the board, a macro is generated prefixed with &quot;BOARD_&quot;."
+                        default="GENERIC_STM32F4XX"
+                        editable="true"
+                        name="Board Identifier"
+                        regex="^[a-zA-Z_][a-zA-Z0-9_]*$"
+                        required="true"
+                        type="string">
+                  </property>
+                  <property
+                        brief="A readable name for the board, must not contain double quotes."
+                        default="Generic STM32F4xx"
+                        editable="true"
+                        name="Board Name"
+                        required="true"
+                        type="string">
+                  </property>
+               </group>
+               <group
+                     name="Clock Settings">
+                  <description>
+                     Clock related settings.
+                  </description>
+                  <property
+                        brief="MCU voltage in hundredths of Volt, the voltage affects wait states and maximum core frequency."
+                        default="300"
+                        editable="true"
+                        max="360"
+                        min="180"
+                        name="VDD"
+                        required="true"
+                        type="unsigned">
+                  </property>
+                  <property
+                        brief="HSE Oscillator Mode."
+                        default="0"
+                        editable="true"
+                        name="HSE Oscillator Mode"
+                        required="true"
+                        type="enum"
+                        value="Crystal,Bypass,None">
+                  </property>
+                  <property
+                        brief="HSE frequency in Hz, unused if mode is set to None."
+                        default="8000000"
+                        editable="true"
+                        max="26000000"
+                        min="1000000"
+                        name="HSE Frequency"
+                        required="true"
+                        type="unsigned">
+                  </property>
+                  <property
+                        brief="LSE Oscillator Mode."
+                        default="0"
+                        editable="true"
+                        name="LSE Oscillator Mode"
+                        required="true"
+                        type="enum"
+                        value="Crystal,Bypass,None">
+                  </property>
+                  <property
+                        brief="LSE frequency in Hz, unused if mode is set to None."
+                        default="32768"
+                        editable="true"
+                        max="1000000"
+                        min="32768"
+                        name="LSE Frequency"
+                        required="true"
+                        type="unsigned">
+                  </property>
+               </group>
+               <group
+                     name="PHY Settings">
+                  <description>
+                     Settings related to the Ethernet PHY.
+                  </description>
+                  <property
+                        brief="PHY Address or auto-scan mode."
+                        default="0"
+                        editable="true"
+                        name="Address"
+                        required="true"
+                        type="enum"
+                        value="None,Autoscan,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31">
+                  </property>
+                  <property
+                        brief="PHY identifier number."
+                        default="0"
+                        editable="true"
+                        name="ID"
+                        required="true"
+                        type="enum"
+                        value="MII_DP83848I_ID,MII_STE101P_ID,MII_KS8721_ID,MII_DM9161_ID,MII_AM79C875_ID">
+                  </property>
+                  <property
+                        brief="PHY connection mode."
+                        default="0"
+                        editable="true"
+                        name="Mode"
+                        required="true"
+                        type="enum"
+                        value="RMII,MII">
+                  </property>
+               </group>
+               <group
+                     name="I/O Settings">
+                  <description>
+                     I/O pins related settings. All undefined pins are initialized as input with pull-up resistor.
+                  </description>
+                  <property
+                        brief="Pin modes to be programmed when the HAL is initialized."
+                        editable="true"
+                        length="0"
+                        name="Pins List"
+                        required="true"
+                        type="list"
+                        value="Pin Identification|Port,Pin Identification|Bit,Pin Identification|Identifiers,Settings|Pin Mode">
+                     <group
+                           name="Pin Settings">
+                        <description>
+                           Pin initialization data and identification. Note, setting of alternate function requires knowledge of the HW details, please consult the table 7 in section 3 &quot;Pinouts and pin description&quot; of the DataSheet.
+                        </description>
+                        <group
+                              name="Pin Identification">
+                           <description>
+                              Pin identification properties.
+                           </description>
+                           <property
+                                 brief="Pin Identifiers, you can specify one or more space-separated names for the pin. If left empty an unique name is generated."
+                                 editable="true"
+                                 name="Identifiers"
+                                 regex="^([a-zA-Z_][a-zA-Z0-9_]*\s*)*$"
+                                 required="false"
+                                 type="string">
+                           </property>
+                           <property
+                                 brief="Port where the pin belongs to."
+                                 default="0"
+                                 editable="true"
+                                 name="Port"
+                                 required="true"
+                                 type="enum"
+                                 value="GPIOA,GPIOB,GPIOC,GPIOD,GPIOE,GPIOF,GPIOG,GPIOH,GPIOI">
+                           </property>
+                           <property
+                                 brief="Pin bit number within the specified port, note, pin 0 is the most significant bit within the port."
+                                 default="0"
+                                 editable="true"
+                                 name="Bit"
+                                 required="true"
+                                 type="enum"
+                                 value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15">
+                           </property>
+                        </group>
+                        <group
+                              name="Settings">
+                           <description>
+                              Pin state and mode settings.
+                           </description>
+                           <property
+                                 brief="Pin modes such as direction, pull-up/down resistors etc."
+                                 default="0"
+                                 editable="true"
+                                 name="Pin Mode"
+                                 required="true"
+                                 type="enum"
+                                 value="Input,Output,Alternate,Analog">
+                           </property>
+                           <property
+                                 brief="Logic state to be latched into the output register."
+                                 default="0"
+                                 editable="true"
+                                 name="Latched State"
+                                 required="true"
+                                 type="enum"
+                                 value="Low,High">
+                           </property>
+                           <property
+                                 brief="Output mode setting for output pins."
+                                 default="0"
+                                 editable="true"
+                                 name="Output Type"
+                                 required="true"
+                                 type="enum"
+                                 value="PushPull,OpenDrain">
+                           </property>
+                           <property
+                                 brief="Output speed setting for output pins."
+                                 default="2"
+                                 editable="true"
+                                 name="Output Speed"
+                                 required="true"
+                                 type="enum"
+                                 value="2MHz,25MHz,50MHz,100MHz">
+                           </property>
+                           <property
+                                 brief="Input resistor setting for input pins."
+                                 default="0"
+                                 editable="true"
+                                 name="Input Resistor"
+                                 required="true"
+                                 type="enum"
+                                 value="Floating,Pull-Up,Pull-Down">
+                           </property>
+                           <property
+                                 brief="Alternate function number settings for alternate pins."
+                                 default="0"
+                                 editable="true"
+                                 name="Alternate Function"
+                                 required="true"
+                                 type="enum"
+                                 value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15">
+                           </property>
+                        </group>
+                     </group>
+                  </property>
+               </group>
+               <group
+                     expanded="false"
+                     name="Initialization Code">
+                  <description>
+                     Code snippets to be executed at system initialization. Ident the code using two spaces in order to ensure generated code formatting.
+                  </description>
+                  <property
+                        brief="Code to be executed immediately after clock initialization and before C runtime initialization."
+                        editable="true"
+                        name="Early Initialization Code"
+                        required="false"
+                        type="formatted">
+                  </property>
+                  <property
+                        brief="Code to be executed immediately after C runtime initialization and before any defined constructor."
+                        editable="true"
+                        name="Late Initialization Code"
+                        required="false"
+                        type="formatted">
+                  </property>
+                  <property
+                        brief="Code to be executed after the HAL has been initialized, board-related initializations should go here."
+                        editable="true"
+                        name="Board Initialization Code"
+                        required="false"
+                        type="formatted">
+                  </property>
+                  <property
+                        brief="Additional functions to be added to board.c."
+                        editable="true"
+                        name="Additional Code"
+                        required="false"
+                        type="formatted">
+                  </property>
+               </group>
+            </configuration>
+            <exportedFeatures>
+               <exportedFeature
+                     brief="Board definitions interface."
+                     exclusive="true"
+                     id="org.chibios.spc5.features.board">
+               </exportedFeature>
+            </exportedFeatures>
+      </component>
+   </extension>
+   <extension
+         point="com.st.tools.spc5.resources">
+      <resources
+            type="com.st.tools.spc5.lines.resource">
+         <resource
+               id="LINE_STM32"
+               name="STM32-Line"
+               rsc="rsc/stm32_01.png">
+         </resource>
+      </resources>
+      <resources
+            type="com.st.tools.spc5.boards.resource">
+         <resource
+               id="STM32F4XX_NUCLEO"
+               name="NUCLEO Board with STM32FXX"
+               rsc="rsc/NUCLEO_STM32.png">
+            <property
+                  name="cpn"
+                  value="NUCLEO-F401RE">
+            </property>
+            <property
+                  name="line"
+                  value="LINE_STM32">
+            </property>
+            <property
+                  name="description"
+                  value="Daughter/Nucleo board for STM32 series devices">
+            </property>
+            <property
+                  name="link"
+                  value="http://www.st.com/web/catalog/tools/FM116/SC959/SS1532/LN1847/PF260000">
+            </property>
+         </resource>
+      </resources>
+      <resources
+            type="com.st.tools.spc5.devices.resource">
+         <resource
+               id="STM32F401"
+               name="STM32F401">
+            <property
+                  name="line"
+                  value="LINE_STM32">
+            </property>
+            <property
+                  name="board"
+                  value="STM32F4XX_NUCLEO">
+            </property>
+         </resource>
+      </resources>
+   </extension>
+
+</plugin>

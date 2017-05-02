@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Run copy script for CHIBIOS..."
+sh ./copysrc.sh
+echo "copy script done"
