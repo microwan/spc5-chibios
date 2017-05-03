@@ -165,12 +165,15 @@ cp -f ${chibios}/os/ports/GCC/PPC/SPC56ELxx/vectors.s      ./SPC56ELxx/ChibiOS-R
 
 # STM32F4xx Platform.
 echo "STM32F4xx Platform"
-
+mkdir -p ./STM32F4xx/ChibiOS-RT_STM32F4xx_Platform_Component/component/lib/rsc
+mkdir -p ./STM32F4xx/ChibiOS-RT_STM32F4xx_Platform_Component/component/lib/src
 cp -f ${chibios}/os/ports/GCC/ARMCMx/rules.mk              ./STM32F4xx/ChibiOS-RT_STM32F4xx_Platform_Component/component/lib/rsc/
 cp -f ${chibios}/os/ports/GCC/ARMCMx/crt0.c                ./STM32F4xx/ChibiOS-RT_STM32F4xx_Platform_Component/component/lib/src/
 
 # STM32F4xx Kernel Port.
 echo "STM32F4xx Kernel Port"
+mkdir -p ./STM32F4xx/ChibiOS-RT_STM32F4xx_Kernel_Port_Component/component/lib/include
+mkdir -p ./STM32F4xx/ChibiOS-RT_STM32F4xx_Kernel_Port_Component/component/lib/src
 cp -f ${chibios}/os/ports/common/ARMCMx/nvic.h             ./STM32F4xx/ChibiOS-RT_STM32F4xx_Kernel_Port_Component/component/lib/include/
 cp -f ${chibios}/os/ports/common/ARMCMx/nvic.c             ./STM32F4xx/ChibiOS-RT_STM32F4xx_Kernel_Port_Component/component/lib/src/
 cp -f ${chibios}/os/ports/GCC/ARMCMx/chcore.h              ./STM32F4xx/ChibiOS-RT_STM32F4xx_Kernel_Port_Component/component/lib/include/
