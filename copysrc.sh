@@ -12,6 +12,8 @@ if [ ! -d $do_templates ]
 then
   cp -f ${chibios}/os/kernel/templates/chconf.h ./portable/ChibiOS-RT_Portable_Kernel_Component/component/cfg/chconf.h.ftl
 fi
+mkdir -p ./portable/ChibiOS-RT_Portable_Kernel_Component/component/lib/include
+mkdir -p ./portable/ChibiOS-RT_Portable_Kernel_Component/component/lib/src
 cp -f -R ${chibios}/os/kernel/include ./portable/ChibiOS-RT_Portable_Kernel_Component/component/lib
 cp -f -R ${chibios}/os/kernel/src ./portable/ChibiOS-RT_Portable_Kernel_Component/component/lib
 
@@ -21,6 +23,8 @@ if [ ! -d $do_templates ]
 then
   cp -f ${chibios}/os/hal/templates/halconf.h ./portable/ChibiOS-RT_Portable_HAL_Component/component/cfg/halconf.h.ftl
 fi
+mkdir -p ./portable/ChibiOS-RT_Portable_HAL_Component/component/lib/include
+mkdir -p ./portable/ChibiOS-RT_Portable_HAL_Component/component/lib/src
 cp -f -R ${chibios}/os/hal/include ./portable/ChibiOS-RT_Portable_HAL_Component/component/lib
 cp -f -R ${chibios}/os/hal/src ./portable/ChibiOS-RT_Portable_HAL_Component/component/lib
 
