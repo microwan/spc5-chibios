@@ -2,7 +2,7 @@
 <feature
       id="org.chibios.spc5.components.stm32xx.full.feature"
       label="ChibiOS-RT STM32xx Full Feature"
-      version="1.0.0.qualifier"
+      version="2.6.4.qualifier"
       provider-name="ST Microelectronics">
 
    <description>
