@@ -56,8 +56,8 @@
     <module>common/ChibiOS-RT SPC56xx Full Feature</module>
     <module>common/ChibiOS-RT STM32xx Full Feature</module>
     <module>common/ChibiOS-RT_Branding_Plugin</module>
-    <!--<module>common/ChibiOS-RT_Update_Site</module>
-    <module>common/ChibiStudio_Update_Site</module>-->
+    <module>common/ChibiOS-RT_Update_Site</module>
+    <!--<module>common/ChibiStudio_Update_Site</module>-->
     <module>external/CMSIS_Component</module>
     <module>portable/ChibiOS-RT_Portable_Components_Feature</module>
     <module>portable/ChibiOS-RT_Portable_HAL_Component</module>

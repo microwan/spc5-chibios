@@ -3,12 +3,12 @@
    <description name="ChibiOS/RT Eclipse Update Site">
       ChibiOS/RT Eclipse Update Site.
    </description>
-   <feature url="features/org.chibios.spc5.components.spc56xx.full.feature_2.6.4.qualifier.jar" id="org.chibios.spc5.components.spc56xx.full.feature" version="2.6.4.qualifier">
+   <feature id="org.chibios.spc5.components.spc56xx.full.feature" version="2.6.4.qualifier">
       <category name="ChibiOS/RT"/>
    </feature>
    <category-def name="ChibiOS/RT" label="ChibiOS/RT">
       <description>
-         ChibiOS/RT Components and Plugnis.
+         ChibiOS/RT Components and Plugins.
       </description>
    </category-def>
 </site>
