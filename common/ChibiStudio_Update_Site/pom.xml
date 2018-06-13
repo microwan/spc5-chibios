@@ -11,5 +11,5 @@
   <groupId>com.st.tools.spc5.components</groupId>
   <artifactId>ChibiStudio_Update_Site</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>eclipse-update-site</packaging>
+  <packaging>eclipse-repository</packaging>
 </project>

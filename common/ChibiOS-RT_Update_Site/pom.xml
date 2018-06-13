@@ -11,7 +11,7 @@
   <groupId>com.st.tools.spc5.components</groupId>
   <artifactId>ChibiOS-RT_Update_Site</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>eclipse-update-site</packaging>
+  <packaging>eclipse-repository</packaging>
   <properties>
   	<targetdir>../../../../../../Lines/composite/components/chibios/</targetdir>
   </properties>
@@ -22,7 +22,7 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.5.0</version>
         <configuration>
-        	<workingDirectory>${project.build.directory}/site</workingDirectory>
+        	<workingDirectory>${project.build.directory}/repository</workingDirectory>
         </configuration>
         <executions>
            <execution>
