@@ -113,5 +113,59 @@
       </plugins>
      </build>
     </profile>
+    <profile>
+     <id>uploadRelease</id>
+     <properties>
+      <!-- Properties relative to the
+      distant host where to upload the repo -->
+      <sftp.url>sftp://92.222.170.75/</sftp.url>
+      <scp.url>scp://92.222.170.75/</scp.url>
+      <sftp.toDir>/home/web/www/sites/updates/components/chibios</sftp.toDir>
+      <!-- Relative path to the repo being uploaded -->
+      <repo.path>${project.build.directory}/repository/</repo.path>
+     </properties>
+
+     <build>
+      <plugins>
+       <!-- Upload the repo to the server -->
+       <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>wagon-maven-plugin</artifactId>
+        <version>1.0</version>
+        <executions>
+            <execution>
+              <id>execute-rm-internal</id>
+              <phase>install</phase>
+              <goals>
+                <goal>sshexec</goal>
+              </goals>
+              <configuration>
+                <serverId>ovhserver</serverId>
+                <url>${scp.url}</url>
+                <commands>
+                  <command>rm -rf /home/web/www/sites/updates/components/chibios/*</command>
+                </commands>
+              </configuration>
+            </execution>
+            <execution>
+              <id>upload-repo</id>
+              <phase>install</phase>
+              <goals>
+                <goal>upload</goal>
+              </goals>
+              <configuration>
+                <fromDir>${repo.path}</fromDir>
+                <includes>**</includes>
+                <toDir>${sftp.toDir}</toDir>
+                <url>${sftp.url}</url>
+                <!-- Points to your settings.xml -->
+                <serverId>ovhserver</serverId>
+              </configuration>
+           </execution>
+        </executions>
+       </plugin>
+      </plugins>
+     </build>
+    </profile>
   </profiles>
 </project>
