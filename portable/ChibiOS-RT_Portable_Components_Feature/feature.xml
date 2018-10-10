@@ -7,15 +7,15 @@
       plugin="org.chibios.spc5.branding"
       exclusive="true">
 
-   <description url="http://www.example.com/description">
+   <description url="http://www.chibios.org">
       ChibiOS/RT free embedded RTOS Portable Components.
    </description>
 
-   <copyright url="http://www.example.com/copyright">
+   <copyright url="http://www.chibios.org">
       ChibiOS/RT - Copyright (C) 2007...2013 Giovanni Di Sirio.
    </copyright>
 
-   <license url="http://www.chibios.org/dokuwiki/doku.php?id=chibios:license">
+   <license url="https://www.gnu.org/licenses/gpl.txt">
       ChibiOS/RT is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 3 of the License, or

@@ -5,15 +5,15 @@
       version="2.6.4.qualifier"
       provider-name="ST Microelectronics">
 
-   <description>
+   <description url="http://www.chibios.org">
       ChibiOS/RT free embedded RTOS for SPC56xx Components.
    </description>
 
-   <copyright url="http://www.chibios.org/dokuwiki/doku.php?id=chibios:copyright">
+   <copyright url="http://www.chibios.org">
       ChibiOS/RT - Copyright (C) 2007...2018 Giovanni Di Sirio.
    </copyright>
 
-   <license url="http://www.chibios.org/dokuwiki/doku.php?id=chibios:license">
+   <license url="https://www.gnu.org/licenses/gpl.txt">
       ChibiOS/RT is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 3 of the License, or
