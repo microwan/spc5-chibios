@@ -3,7 +3,7 @@
       id="org.chibios.spc5.components.stm32xx.full.feature"
       label="ChibiOS-RT STM32xx Full Feature"
       version="2.6.4.qualifier"
-      provider-name="ST Microelectronics">
+      provider-name="STMicroelectronics">
 
    <description>
       ChibiOS/RT free embedded RTOS for SPC56xx Components.
